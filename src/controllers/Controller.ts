@@ -1,20 +1,18 @@
 import { FastifyRequest, FastifyReply } from "fastify"
 import { Service } from '../services/Service'
 
-export interface DataProps
-{
-    name: string;
-    weight: string;
-    height: string;
-    age: string;
-    gender: string;
-    objective: string;
-    level: string;
+export interface DataProps{
+  name: string;
+  weight: string;
+  height: string;
+  age: string;
+  gender: string;
+  objective: string;
+  level: string;
 }
   
   class Controller{
-    async handle(request: FastifyRequest, reply: FastifyReply)
-    {
+    async handle(request: FastifyRequest, reply: FastifyReply){
       const { name, weight, height, age, gender, objective, level } = request.body as DataProps;
   
       const createNutrition = new Service();
